@@ -28,5 +28,7 @@ void main() {
       result,
       equals(const Right<dynamic, List<User>>(tResponse)),
     );
+    verify(() => repository.getUsers()).called(1);
+    verifyNoMoreInteractions(repository);
   });
 }
